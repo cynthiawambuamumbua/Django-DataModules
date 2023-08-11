@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+    <h3>Reviews List</h3>
+    <table>
+    <th>
+    <td>name</td>
+    <td>comments</td>
+    </th>
+    {%for review in reviews %}
+    <tr>
+    <td>{{reviews.name}}</td>
+    <td>{{reviews.comments}}</td>
+                
+    </tr>
+    {% endfor %}
+    </table>
+    </body>
+    </html>

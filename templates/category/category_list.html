@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Category List</h3>
+    <table>
+        <th>
+            <td>Name</td>
+            <td>Description</td>
+            <td>Price</td>
+            <td>Stock</td>
+            <td>image</td>
+            <td>date_created</td>
+            <td>date_updated</td>
+        </th>
+        {%for category in categories%}
+        <tr>
+            <td>{{category.name}}</td>
+            <td>{{category.description}}</td>
+            <td>{{category.stock}}</td>
+            <td>{{category.image}}</td>
+            <td>{{category.date_created}}</td>
+            <td>{{category.date_updated}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
