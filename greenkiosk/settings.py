@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'vendor',
     'basket',
     'shipment',
+    'customer',
 ]
 
 MIDDLEWARE = [

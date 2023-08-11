@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Customer List</h3>
+    <table>
+        <th>
+            <td>Name</td>
+            <td>Phone_number</td>
+        </th>
+        {% for customer in customers %}
+        <tr>
+            <td>{{customer.name}}</td>
+            <td>{{customer.phone_number}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
