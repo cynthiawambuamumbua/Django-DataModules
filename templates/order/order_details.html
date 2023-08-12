@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h3>Order List</h3>
+    <h3>Order details List</h3>
     <table>
         <th>
             <td>Name</td>
@@ -22,8 +22,6 @@
             <td>{{order.price}}</td>
             <td>{{order.details}}</td>
             <td>{{order.edit}}</td>
-            <td><a href="{% url 'order_detail_view' id=order.id %}">Order details</a></td>
-            <td><a href="{% url 'edit_product_view' id=order.id %}">Edit Order</a> </td>
         </tr>
         {% endfor %}
     </table>

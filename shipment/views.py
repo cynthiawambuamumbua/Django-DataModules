@@ -11,3 +11,7 @@ def shipment_upload_view(request):
 def shipment_list(request):
     shipment= Shipment.objects.all()
     return render(request,"shipment/shipment_list.html",{"shipment":shipment})
+
+def shipment_detail_view(request,id):
+    shipment= Shipment.objects.all()
+    return render(request,"shipment/shipment_detail.html",{"shipment":shipment})

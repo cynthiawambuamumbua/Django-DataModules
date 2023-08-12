@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Shipment details view List</h3>
+    <table>
+        <th>
+            <td>name</td>
+            <td>description</td>
+            <td>date_created</td>
+        </th>
+        {%for shipment_detail_view  in shipment_detail_views %}
+        <tr>
+            <td>{{shipment.name}}</td>
+            <td>{{shipment.description}}</td>
+            <td>{{description.date_created}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

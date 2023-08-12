@@ -22,7 +22,7 @@ def edit_product_view(request,id):
         form=ProductUploadForm(request.POST,instance=product)
         if form.is_valid():
             form.save()
-            return redirect('product_detail_view',id=product.id)
+            return redirect('product_detail_view',id=product)
         else:
             form=ProductUploadForm(instance=product)
             return render(request,'edit/edit_product.html',{'form':form})
