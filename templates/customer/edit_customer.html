@@ -3,12 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{%static 'customer/edit_customer.css'%}">
     <title>Document</title>
 </head>
 <body>
-    <h2>Edit customer</h2>
-    <form method="POST" class="post-form">{%csrf_token%}{{form.as_table}}
-        <button type="submit" class="save btn btn-default">Save</button>
-    </form>
+    <div class="container">
+        <h2>Edit Customer</h2>
+        <form method="POST" class="post-form">
+            {% csrf_token %}
+            {{ form.as_table }}
+            <button type="submit">Save</button>
+        </form>
+    </div>
 </body>
 </html>

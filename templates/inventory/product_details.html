@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{%static 'inventory/product_details.css'%}">
     <title>Document</title>
 </head>
 <body>
-    <img src="{{product.image.url}}" alt="Product image"/>
-    <h4>{{product.title}}</h4>
-    <p>{{product.description}}</p>
-    <span>{{product.price}}</span>
-    <button>Add to cart</button>
+    <div class="product-container">
+        <img class="product-image" src="{{ product.image.url }}" alt="Product image">
+        <h4 class="product-title">{{ product.title }}</h4>
+        <p class="product-description">{{ product.description }}</p>
+        <span class="product-price">{{ product.price }}</span>
+        <button class="add-to-cart-button">Add to cart</button>
+    </div>
+    
 </body>
 </html>

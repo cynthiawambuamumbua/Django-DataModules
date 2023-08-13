@@ -14,12 +14,14 @@
             <td>payment_status</td>
             <td>expiration_date</td>
         </th>
-        {%for payment in payments %}
+        {%for payment in payment %}
         <tr>
             <td>{{payment.name}}</td>
             <td>{{payment.payment_method}}</td>
             <td>{{payment.payment_status}}</td>
             <td>{{payment.expiration_date}}</td>
+            <td> <a href="{% url 'payment_detail_view' id=payment.id %}">Payment details</a> </td>
+            <td><a href="{% url 'edit_payment_view' id=payment.id %}">Edit Payment</a> </td>
 
         </tr>
         {% endfor %}

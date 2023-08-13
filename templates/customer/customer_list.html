@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{%static 'customer/customer_list.css'%}">
     <title>Customer List</title>
 </head>
 <body>
@@ -14,12 +16,12 @@
             <th>Details</th>
             <th>Edit</th>
         </tr>
-        {% for customer in customer %}
+        {%for customer in customer%}
         <tr>
             <td>{{ customer.name }}</td>
             <td>{{ customer.phone_number }}</td>
             <td>{{ customer.details }}</td>
-            <td>{{customer.edit}}</td>
+            <td>{{ customer.edit }}</td>
             <td><a href="{% url 'customer_detail_view' id=customer.id %}">Customer list</a></td>
             <td><a href="{% url 'customer_edit_view' id=customer.id %}">Edit Customer</a></td>
         </tr>

@@ -1,8 +1,8 @@
 from django.urls import path
-from.views import shippingAddress_upload_view
+from.views import shippingAddress_upload_view,shippingAddress_detail_view,shippingAddress_list,edit_shippingAddress_view
 urlpatterns=[
     path("shippingAddress/upload/",shippingAddress_upload_view,name="shippingAddress_upload_view"),
-    # path("products/list/",products_list,name="products_list"),
-    # path("products/<int:id>",product_detail_view,name="product_detail_view"),
-    # path('/products/edit/int:id>/',edit_product_view,name='edit_product_view')
+    path("shippingAddress/list/",shippingAddress_list,name="shippingAddress_list"),
+    path("shippingAddress/<int:id>",shippingAddress_detail_view,name="shippingAddress_detail_view"),
+    path('/shippingAddress/edit/<int:id>/',edit_shippingAddress_view,name='edit_shippingAddress_view')
 ]

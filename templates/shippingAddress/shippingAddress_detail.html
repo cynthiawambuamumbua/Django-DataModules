@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>ShippingAddress details</h3>
+    <table>
+        <th>
+            <td>name</td>
+            <td>description</td>
+            <td>date_created</td>
+        </th>
+        {%for shippingAddress in shippingAddress %}
+        <tr>
+            <td>{{shippingAddress.name}}</td>
+            <td>{{shippingAddress.description}}</td>
+            <td>{{shippingAddress.date_created}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

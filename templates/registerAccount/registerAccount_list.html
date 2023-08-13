@@ -15,14 +15,15 @@
             <td>phone_number</td>
             <td>address</td>
         </th>
-        {%for registerAccount in registerAccounts %}
+        {%for registerAccount in registerAccount %}
         <tr>
             <td>{{registerAccount.first_name}}</td>
             <td>{{registerAccount.second_name}}</td>
             <td>{{registerAccount.email}}</td>
             <td>{{registerAccount.phone_number}}</td>
             <td>{{registerAccount.address}}</td>
-
+            <td> <a href="{% url 'registerAccount_detail_view' id=registerAccount.id %}">registerAccount details</a> </td>
+            <td><a href="{% url 'edit_registerAccount_view' id=registerAccount.id %}">Edit registerAccount</a> </td>
         </tr>
         {% endfor %}
     </table>

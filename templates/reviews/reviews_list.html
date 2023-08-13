@@ -12,10 +12,12 @@
     <td>name</td>
     <td>comments</td>
     </th>
-    {%for review in reviews %}
+    {%for reviews in reviews%}
     <tr>
     <td>{{reviews.name}}</td>
     <td>{{reviews.comments}}</td>
+    <td> <a href="{% url 'reviews_detail_view' id=reviews.id %}">Reviews details</a> </td>
+    <td><a href="{% url 'edit_reviews_view' id=reviews.id %}">Edit Reviews</a> </td>
                 
     </tr>
     {% endfor %}

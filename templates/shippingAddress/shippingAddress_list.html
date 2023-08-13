@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>shippingAddress List</h3>
+    <table>
+        <th>
+            <td>name</td>
+            <td>description</td>
+            <td>date_created</td>
+        </th>
+        {%for shippingAddress in shippingAddress %}
+        <tr>
+            <td>{{shippingAddress.name}}</td>
+            <td>{{shippingAddress.description}}</td>
+            <td>{{shippingAddress.date_created}}</td>
+            <td><a href="{% url 'shippingAddress_detail_view' id=shippingAddress.id %}">shippingAddress List</a> </td>
+            <td><a href="{% url 'edit_shipment_view' id=shippingAddress.id %}">Edit ShippingAddress</a> </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

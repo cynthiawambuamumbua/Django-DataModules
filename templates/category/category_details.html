@@ -3,17 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{%static 'category/category_details.css'%}">
     <title>Document</title>
 </head>
 <body>
-    <img src="{{category.image.url}}" alt="Category image"/>
-    <h4>{{category.description}}</h4>
-    <p>{{category.price}}</p>
-    <p>{{category.stock}}</p>
-    <p>{{category.price}}</p>
-    <p>{{category.date_created}}</p>
-    <p>{{category.date_updated}}</p>
-    <span>{{category.details}}</span>
-    <button>save</button>
+    <div class="container">
+        <img src="{{ category.image.url }}" alt="Category image">
+        <h4>{{ category.description }}</h4>
+        <p>Price: {{ category.price }}</p>
+        <p>Stock: {{ category.stock }}</p>
+        <p>Date Created: {{ category.date_created }}</p>
+        <p>Date Updated: {{ category.date_updated }}</p>
+        <span>{{ category.details }}</span>
+        <span>{{ category.edit }}</span>
+        <button>Save</button>
+    </div>
 </body>
 </html>

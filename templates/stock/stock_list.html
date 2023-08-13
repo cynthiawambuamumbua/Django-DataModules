@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>stock List</h3>
+    <table>
+        <th>
+            <td>name</td>
+            <td>price</td>
+            <td>quantity</td>
+            <td>description</td>
+            <td>date_updated</td>
+            <td>date_created</td>
+        </th>
+        {%for stock in stock %}
+        <tr>
+            <td>{{stock.name}}</td>
+            <td>{{stock.price}}</td>
+            <td>{{stock.quantity}}</td>
+            <td>{{stock.date_updated}}</td>
+            <td>{{stock.description}}</td>
+            <td>{{stock.date_created}}</td>
+            <td><a href="{% url 'stock_detail_view' id=stock.id %}">stock list</a> </td>
+            <td><a href="{% url 'edit_stock_view' id=stock.id %}">Edit Stock</a> </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

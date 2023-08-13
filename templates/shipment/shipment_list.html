@@ -13,11 +13,13 @@
             <td>description</td>
             <td>date_created</td>
         </th>
-        {%for shipment in shipments %}
+        {%for shipment in shipment %}
         <tr>
             <td>{{shipment.name}}</td>
             <td>{{shipment.description}}</td>
-            <td>{{description.date_created}}</td>
+            <td>{{shipment.date_created}}</td>
+            <td><a href="{% url 'shipment_detail_view' id=shipment.id %}">Shipment List</a> </td>
+            <td><a href="{% url 'edit_shippingAdress_view' id=shippingAddress.id %}">Edit shippingAddress</a> </td>
         </tr>
         {% endfor %}
     </table>

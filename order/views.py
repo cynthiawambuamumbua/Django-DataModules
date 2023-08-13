@@ -10,11 +10,11 @@ def order_upload_view(request):
 
 def order_list(request):
     order= Order.objects.all()
-    return render(request,"order/order_list.html",{"orders":order})
+    return render(request,"order/order_list.html",{"order":order})
 
-def order_detail_view(request,id):
-    orders=Order.objects.all()
-    return render(request,"order/order_details.html",{"orders":orders})
+def order_detail_view(request):
+    order=Order.objects.all()
+    return render(request,"order/order_details.html",{"order":order})
 
 def edit_order_view(request,id):
     order=Order.objects.get(id=id)
@@ -22,7 +22,7 @@ def edit_order_view(request,id):
         form=OrderUploadForm(request.POST,instance=order)
         if form.is_valid():
             form.save()
-            return redirect('product_detail_view',id=order)
+            return redirect('order_detail_view',id=order)
         else:
             form=OrderUploadForm(instance=order)
             return render(request,'edit/edit_order.html',{'form':form})

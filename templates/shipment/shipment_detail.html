@@ -6,18 +6,18 @@
     <title>Document</title>
 </head>
 <body>
-    <h3>Shipment details view List</h3>
+    <h3>Shipment details</h3>
     <table>
         <th>
             <td>name</td>
             <td>description</td>
             <td>date_created</td>
         </th>
-        {%for shipment_detail_view  in shipment_detail_views %}
+        {%for shipment in shipment %}
         <tr>
             <td>{{shipment.name}}</td>
             <td>{{shipment.description}}</td>
-            <td>{{description.date_created}}</td>
+            <td>{{shipment.date_created}}</td>
         </tr>
         {% endfor %}
     </table>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Payment List</h3>
+    <table>
+        <th>
+            <td>Name</td>
+            <td>payment_method</td>
+            <td>payment_status</td>
+            <td>expiration_date</td>
+            <td>Details</td>
+            <td>Edit</td>
+        </th>
+        {%for payment in payment%}
+        <tr>
+            <td>{{payment.name}}</td>
+            <td>{{payment.payment_method}}</td>
+            <td>{{payment.payment_status}}</td>
+            <td>{{payment.expiration_date}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

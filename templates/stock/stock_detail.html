@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Stock details</h3>
+    <table>
+        <th>
+            <img src="{{vendor.image.url}}" alt="vendor image"/>
+            <td>name</td>
+            <td>price</td>
+            <td>quantity</td>
+            <td>description</td>
+            <td>date_created</td>
+            <td>date_updated</td>
+        </th>
+        {%for stock in stock %}
+        <tr>
+            <td>{{stock.name}}</td>
+            <td>{{stock.price}}</td>
+            <td>{{stock.quantity}}</td>
+            <td>{{stock.description}}</td>
+            <td>{{stock.date_created}}</td>
+            <td>{{stock.date_updated}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

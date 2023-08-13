@@ -3,19 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{%static 'category/category_list.css'%}">
     <title>Document</title>
 </head>
 <body>
+    <div class="container">
     <h3>Category List</h3>
     <table>
         <th>
             <td>Name</td>
             <td>Description</td>
-            <td>Price</td>
             <td>Stock</td>
             <td>image</td>
             <td>date_created</td>
             <td>date_updated</td>
+            <td>category details</td>
+            <td>edit category</td>
         </th>
         {%for category in category%}
         <tr>
@@ -30,5 +34,6 @@
         </tr>
         {% endfor %}
     </table>
+</div>
 </body>
 </html>

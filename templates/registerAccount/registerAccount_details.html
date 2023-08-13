@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>RegisterAccount Details</h3>
+    <table>
+        <th>
+            <td>first_name</td>
+            <td>second_name</td>
+            <td>email</td>
+            <td>phone_number</td>
+            <td>address</td>
+        </th>
+        {%for registerAccount in registerAccount%}
+        <tr>
+            <td>{{registerAccount.first_name}}</td>
+            <td>{{registerAccount.second_name}}</td>
+            <td>{{registerAccount.email}}</td>
+            <td>{{registerAccount.phone_number}}</td>
+            <td>{{registerAccount.address}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
+    
