@@ -4,6 +4,5 @@ from django.contrib import admin
 from .models import RegisterAccount
 class RegisterAccountAdmin(admin.ModelAdmin):
     list_display=("first_name","second_name","email","phone_number","password","address")
-
     
 admin.site.register(RegisterAccount,RegisterAccountAdmin)
