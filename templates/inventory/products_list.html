@@ -3,33 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% load static %}
-    <link rel="stylesheet" href="{%static 'inventory/products_list.css'%}">
-    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        .container {
+            /* max-width: 800px; */
+            /* margin: 50px auto; */
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* Adjust the number of columns here */
+            gap: 20px;
+        }
+
+        .product {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .product-content {
+            padding: 10px;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+    <title>Product List</title>
 </head>
 <body>
     <div class="container">
-    <h3>Product List</h3>
-    <table>
-        <th>
-            <td>Name</td>
-            <td>Description</td>
-            <td>Price</td>
-            <td>Details</td>
-            <td>Edit Product</td>
-        </th>
-        <tbody>
-        {%for product in products%}
-        <tr>
-            <td>{{product.name}}</td>
-            <td>{{product.description}}</td>
-            <td>{{product.price}}</td>
-            <td><a href="{% url 'product_detail_view' id=product.id %}">Product details</a></td>
-            <td><a href="{% url 'edit_product_view' id=product.id %}">Edit Product</a> </td>
-        </tr>
-        {% endfor %}
-    </tbody>
-    </table>
+        <h3>Product List</h3>
+        <div class="product-list">
+            {% for product in products %}
+            <div class="product">
+                <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                <div class="product-content">
+                    <p>{{ product.name }}</p>
+                    <p>{{ product.description }}</p>
+                    <p>{{ product.price }}</p>
+                    <button><a href="{% url 'product_detail_view' id=product.id %}">Product details</a></button>
+                    <br/>
+                    <button><a href="{% url 'edit_product_view' id=product.id %}">Edit Product</a></button>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
     </div>
 </body>
 </html>

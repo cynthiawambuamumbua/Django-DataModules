@@ -6,6 +6,28 @@
     {% load static %}
     <link rel="stylesheet" href="{%static 'inventory/product_details.css'%}">
     <title>Document</title>
+    <style>
+        .add-to-cart-btn,
+        .delete-from-cart-btn {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 16px;
+            text-decoration: none; 
+            display: inline-block; 
+            /* display: flex; */
+        }
+
+        .add-to-cart-btn:hover,
+        .delete-from-cart-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
 </head>
 <body>
     <div class="product-container">
@@ -13,7 +35,8 @@
         <h4 class="product-title">{{ product.title }}</h4>
         <p class="product-description">{{ product.description }}</p>
         <span class="product-price">{{ product.price }}</span>
-        <button class="add-to-cart-button">Add to cart</button>
+        <a href="{% url 'shipment_list'%}"><button class="add-to-cart-btn">Add to Cart</button></a>
+        <a href="{% url 'shipment_list'%}"><button class="delete-from-cart-btn">Delete from Cart</button></a>
     </div>
     
 </body>

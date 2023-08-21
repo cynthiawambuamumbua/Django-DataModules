@@ -4,15 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% load static %}
-    <link rel="stylesheet" href="{%static 'customer/customer_details.css'%}">
-    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'customer/customer_details.css' %}">
+    <style>
+        /* Your global styles go here */
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        h4 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        p, span {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <title>Customer Details</title>
 </head>
 <body>
     <div class="container">
-    <h4>{{customer.name}}</h4>
-    <p>{{customer.phone_number}}</p>
-    <span>{{customer.details}}</span>
-    <button>save</button>
+        <h4>{{ customer.name }}</h4>
+        <p>{{ customer.phone_number }}</p>
+        <p>{{ customer.details }}</p>
+        <button>Save</button>
     </div>
 </body>
 </html>

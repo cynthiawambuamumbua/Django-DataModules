@@ -4,29 +4,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% load static %}
-    <link rel="stylesheet" href="{%static 'customer/customer_list.css'%}">
+    <link rel="stylesheet" href="{% static 'customer/customer_list.css' %}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        h3 {
+            font-size: 24px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        p{
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* tr:nth-child(even) {
+            background-color: #f2f2f2;
+        } */
+
+        button a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .action-buttons button {
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+        .action-buttons button:hover {
+            background-color: #0056b3;
+        }
+    </style>
     <title>Customer List</title>
 </head>
 <body>
     <h3>Customer List</h3>
     <table>
-        <tr>
+        <!-- <tr>
             <th>Name</th>
             <th>Phone Number</th>
             <th>Details</th>
             <th>Edit</th>
-        </tr>
-        {%for customer in customer%}
+        </tr> -->
+        {% for customer in customer %}
         <tr>
-            <td>{{ customer.name }}</td>
-            <td>{{ customer.phone_number }}</td>
-            <td>{{ customer.details }}</td>
-            <td>{{ customer.edit }}</td>
-            <td><a href="{% url 'customer_detail_view' id=customer.id %}">Customer list</a></td>
-            <td><a href="{% url 'customer_edit_view' id=customer.id %}">Edit Customer</a></td>
+            <p>{{ customer.name }}</p>
+            <p>{{ customer.phone_number }}</p>
+            <p>{{ customer.details }}</p>
+            <p class="action-buttons">
+                <button><a href="{% url 'customer_detail_view' id=customer.id %}">Customer Details</a></button>
+                <button><a href="{% url 'customer_edit_view' id=customer.id %}">Edit Customer</a></button>
+            </p>
         </tr>
         {% endfor %}
     </table>
 </body>
 </html>
-

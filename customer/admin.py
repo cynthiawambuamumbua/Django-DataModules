@@ -2,6 +2,6 @@ from django.contrib import admin
 
 # Register your models here.
 from .models import Customer
-class ProductsAdmin(admin.ModelAdmin):
-    list_display=("name","phone_number")
-admin.site.register(Customer,ProductsAdmin)
+class CustomerAdmin(admin.ModelAdmin):
+    list_display=("name","phone_number","details")
+admin.site.register(Customer,CustomerAdmin)
