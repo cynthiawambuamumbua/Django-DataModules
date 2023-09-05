@@ -26,3 +26,4 @@ def edit_customer_view(request,id):
         else:
             form=CustomerUploadForm(instance=customer)
             return render(request,'edit/edit_customer.html',{'form':form})
+        

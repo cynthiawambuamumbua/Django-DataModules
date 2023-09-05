@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'basket',
     'shipment',
     'customer',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
