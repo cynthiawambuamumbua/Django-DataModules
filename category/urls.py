@@ -4,5 +4,5 @@ urlpatterns=[
     path("category/upload/",category_upload_view,name="category_upload_view"),
     path("category/list/",category_list,name="category_list"),
     path("category/<int:id>",category_detail_view,name="category_detail_view"),
-    path('/category/edit/<int:id>/',edit_category_view,name='edit_category_view')
+    path('category/edit/<int:id>/',edit_category_view,name='edit_category_view')
 ]

@@ -7,5 +7,3 @@ class Customer(models.Model):
     details=models.TextField()
     def __str__(self):
         return self.name
-    
-

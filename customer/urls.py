@@ -4,5 +4,5 @@ urlpatterns=[
     path("customer/upload/",customer_upload_view,name="customer_upload_view"),
     path("customer/list/",customer_list,name="customer_list"),
     path("customer/<int:id>",customer_detail_view,name="customer_detail_view"),
-    path('/customer/edit/<int:id>/',edit_customer_view,name='edit_customer_view')
+    path('customer/edit/<int:id>/',edit_customer_view,name='edit_customer_view')
 ]
